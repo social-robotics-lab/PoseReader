@@ -98,6 +98,7 @@ public class ServoInit {
 			pose.SetLed(ledIds, ledVals);
 			motion.play(pose, 1500);
 			CRobotUtil.wait(1500);
+			motion.ServoOff();
 			return motion;
 		}
 		else {

@@ -19,12 +19,13 @@ public class AxisController {
 
 	public Map<Byte, Short> read() {
 		Map<Byte, Short> map = new HashMap<Byte, Short>();
+		Byte[] ids = {(byte)1, (byte)3, (byte)5, (byte)7, (byte)8};
 		Short[] vals = motion.getReadpos();
 		if (vals == null){
 			return map;
 		}
 		for (int i = 0; i < vals.length; i++) {
-			map.put((byte)(i + 1), vals[i]);
+			map.put(ids[i], vals[i]);
 		}
 		return map;
 	}
